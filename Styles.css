@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    font-family: 'Poppins' , sans-serif;
+}
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+main {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to right top, #65efc9, #6cdbeb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    min-height: 82vh;
+    width: 85%;
+    background: white;
+    background: linear-gradient(to right bottom, 
+    rgba(255,255,255,0.7), 
+    rgba(255,255,255,0.3));
+    border-radius: 21px;
+    z-index: 99999;
+    backdrop-filter: blur(2rem);
+}
+.circle1 , .circle2 {
+    height: 17rem;
+    width: 17rem;
+    position: absolute;
+    background: white;
+    background: linear-gradient(to right bottom, 
+    rgba(255,255,255,0.8), 
+    rgba(255,255,255,0.3));
+    border-radius: 50%;
+}
+.circle1 {
+    top:1%;
+    right: 1%;
+
+}
+.circle2 {
+    bottom :1%;
+    left: 2%;
+}
+.app-wrapper {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "Header Form Form"
+    "Balance History-track History-track"
+    "Income-Expense History-track History-track";
+}
+.transaction-income {
+    grid-area: Transaction-Income;
+}
+.transaction-expense {
+    grid-area: Transaction-Expense;
+}
+.Header {
+    grid-area: Header;
+    display: flex;
+    margin-left:  auto;
+    margin-right: auto;
+}
+.Header h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: black;
+    padding: 25px;
+    margin-left: 40px;
+}
+.balance {
+    grid-area: Balance ;
+    display:flex;
+    flex-direction: column;
+    height: 5px;
+    align-items: center;
+    text-align: center;
+    margin-left:  auto;
+    margin-right:auto;
+}
+.balance h2 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size:45px;
+    font-weight: 400;
+    text-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.4);
+}
+.balance h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    margin-top: 25px;
+    font-weight: 350;
+    text-shadow: rgba(0,0,0,0.4);
+}
+.income-expense {
+    grid-area: Income-Expense;
+    display: flex;
+    justify-content: center;
+    margin-top:40px;
+    height: 100px;
+    font-family: 'Muli', sans-serif;
+    text-shadow: rgba(0,0,0,0.4);
+    text-align: right;
+}
+.plus , .minus {
+    margin: 0 2rem;
+}
+.plus {
+    color: #77c987;
+    font-size: 25px;
+}
+.minus {
+    color:#ff716e;
+    font-size: 25px;
+}
+#income-submit{
+    background-color:#77c987;
+}
+#expense-submit {
+    background-color: #ff716e;
+}
+.income-expense h3 {
+    font-family: 3.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+.income-expense p {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+  }
+.form-wrapper {
+     grid-area: Form; 
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     grid-template-rows: repeat(2, 1fr);   
+     height: 300px;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    
+}
+.input-group input:not([type="submit"]) {
+    width: 80%;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    border-bottom: 0.2rem solid #777;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    font-family: "Baloo Da 2", serif;
+    font-size: 1.8rem;
+    color: #000;
+    outline: none;
+    transition: border-bottom 0.4s;
+}
+.income input:not([type="submit"]):focus {
+    border-bottom: 0.2rem solid #77c987;
+  }
+  
+  .expense input:not([type="submit"]):focus {
+    border-bottom: 0.2rem solid #ff716e;
+  }
+  #income-submit , #expense-submit {
+    width: 150px;
+    padding: 8px;
+    margin-top:50px;
+    border: none;
+    outline: none;
+    border-radius: 0.7rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    color: #eee;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .transactions {
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .over-flow {
+    overflow-y: auto;
+    height: 350px;
+  }
+  .over-flow::-webkit-scrollbar { width: 0 !important }
+ .transactions h2 {
+   padding-bottom: 10px;
+ }
+  
+  .transactions-income  {
+    padding-top: 5px;
+    text-align: center;
+    padding-bottom: 1px;
+
+  }
+  
+  .transactions-expense  {
+    padding-top: 5px;
+    text-align: center;
+  }
+  
+  .transaction-text {
+    width: 23rem;
+  }
+  
+  .transaction-amount {
+    transform: translateX(3rem);
+  }  
+  .history-track {
+    grid-area: History-track;
+    display: flex;
+    flex-direction: row;
+  }
+/*aditional code*/
+.delete-btn {
+    cursor: pointer;
+    background-color: #e74c3c;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 2px 5px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .list li:hover .delete-btn {
+    opacity: 1;
+  }
+.list {
+    list-style-type: none;
+    width: 400px;
+    padding: 0;
+    margin-bottom: 40px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+  }
+  
+  .list li {
+    background-color: #fff;
+    box-shadow: var(--box--shadow);
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+  }
+   .list .Income-History {
+    border-right: 5px solid #2ecc71;
+  }
+  
+  .list .Expense-History {
+    border-right: 5px solid #c0392b;
+  }
+  /*Delete later*/
+
+@media (max-width: 1500px) {
+    html {
+      font-size: 58%;
+    }
+  
+    .app-wrapper {
+      width: 95%;
+      max-width: 140rem;
+      height: 85vh;
+    }
+  
+    .balance {
+      margin-top: 6rem;
+    }
+  
+    .income-expense {
+      margin-top: 7rem;
+    }
+  
+    .transaction-list {
+      max-height: 31rem;
+    }
+  
+    .transaction {
+      width: 30rem;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    html {
+      font-size: 52%;
+    }
+  
+    .app-wrapper {
+      grid-gap: 0;
+    }
+  
+    .transaction-list {
+      max-height: 29rem;
+    }
+  
+    .transaction {
+      width: 28rem;
+    }
+  }
+/*To hide the arrow int the nu,ber input field*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}  

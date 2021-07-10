@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="Script.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="Styles.css">
+    <link rel="Expense Tracker"  type="image/png" href="Tracker_logo.png" size="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <main>
+        <section class="container">
+            <div class="app-wrapper">
+                <div class="Header">
+                    <h1>Expense Tracker</h1>
+                </div>
+                <div class="balance">
+                    <h2>Your Balance</h2>
+                    <h3><span id="balance-amount" class="balance-amount">0.00</span></h3>
+                </div>
+                <div class="income-expense">
+                    <div class="plus">
+                        <h2>Income:</h2>
+                        <h3><span id="income-amount" class="income-amount">0.0</span></h3>
+                    </div>
+                    <div class="minus">
+                        <h2>Expense:</h2>
+                        <h3>₹<span id="expense-amount" class="expense-amount">0.0</span></h3>
+                    </div>
+                </div>
+                   
+                    <div class="form-wrapper">
+                        <form id="form-income" class="form-1"> 
+                            <div class="input-group input-income">
+                                <input id="income-text" type="text" placeholder="Add income..." autocomplete="off" required>
+                                <input id="income-amount" type="number" placeholder="Amount" autocomplete="off" required>
+                                <input id="income-submit" type="submit" value="Submit">
+                            </div>
+                        </form>
+                        <form id="form-expense" class="form-2">
+                            <div class="input-group input-expense">
+                                <input id="expense-text" type="text" placeholder="Add expense..." autocomplete="off">
+                                <input id="expense-amount" type="number" placeholder="Amount" autocomplete="off">
+                                <input id="expense-submit" type="submit" value="Submit">
+                            </div>
+                        </form>
+                    
+                </div>
+            
+            <div class="history-track">
+                <div class="transactions transactions-income">
+                    <h2>Transaction History</h2>
+                    <div class="over-flow"> 
+                    <ul class="list" id="list_income">
+                        <li class="Income-History">
+                            Cash<span>₹400</span><button class="delete-btn">X</button>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="transactions transactions-expense">
+                    <h2>Transaction History</h2>
+                    <div class="over-flow">
+                    <ul class="list" id="list_expense">
+                        <li class="Expense-History">
+                            Burger<span>₹40</span><button class="delete-btn">X</button>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+</body>
+</html>
